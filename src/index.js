@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './SCSS/index';
 
-function Title({ text }) {
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Test from './JS/components/Test';
+
+function App() {
 	return (
-		<h1>{ text }</h1>
+		<Test />
 	)
 }
 
-ReactDOM.render(<Title text="Mmm whatcha say" />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
