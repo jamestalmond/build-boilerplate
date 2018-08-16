@@ -1,0 +1,3 @@
+# Build boilerplate
+
+A webpack build boilerplate with SCSS, React, tests...
