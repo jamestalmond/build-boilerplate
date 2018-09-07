@@ -27,7 +27,12 @@ module.exports = function() {
 								'sass-loader'
 							]
 						}
-					)
+					),
+					// use: [
+					// 	'style-loader',
+					// 	'css-loader',
+					// 	'sass-loader'
+					// ]
 				},
 				{
 					test: /\.js$/,
@@ -48,7 +53,6 @@ module.exports = function() {
 					filename: 'css/deals-page.bundle.css'
 				}
 			)
-		],
-		devtool: 'source-map'
+		]
 	}
 }
