@@ -1,5 +1,5 @@
 {
-  "extends": ["ao", "prettier"],
+  "extends": ["prettier"],
   "root": true,
   "env": {
     "es6": true,
