@@ -1,6 +1,8 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 
+const BUNDLE_NAME = 'build-boilerplate';
+
 // input
 // output
 // plugins
@@ -50,7 +52,7 @@ module.exports = function() {
 			}),
 			new extractTextPlugin(
 				{
-					filename: 'css/deals-page.bundle.css'
+					filename: `css/${BUNDLE_NAME}.bundle.css`
 				}
 			)
 		]
