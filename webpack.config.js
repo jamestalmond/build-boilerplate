@@ -22,19 +22,19 @@ module.exports = function() {
 			rules: [
 				{
 					test: /\.s?css$/,
-					use: extractTextPlugin.extract(
-						{
-							use: [
-								'css-loader',
-								'sass-loader'
-							]
-						}
-					),
-					// use: [
-					// 	'style-loader',
-					// 	'css-loader',
-					// 	'sass-loader'
-					// ]
+					// use: extractTextPlugin.extract(
+					// 	{
+					// 		use: [
+					// 			'css-loader',
+					// 			'sass-loader'
+					// 		]
+					// 	}
+					// ),
+					use: [
+						'style-loader',
+						'css-loader',
+						'sass-loader'
+					]
 				},
 				{
 					test: /\.js$/,
