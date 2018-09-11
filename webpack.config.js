@@ -55,6 +55,11 @@ module.exports = function() {
 					filename: `css/${BUNDLE_NAME}.bundle.css`
 				}
 			)
-		]
+		],
+		devServer: {
+			historyApiFallback: true,
+			port: 9000,
+			open: true
+		}
 	}
 }
