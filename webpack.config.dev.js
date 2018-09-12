@@ -3,21 +3,13 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = function() {
 	return {
 		resolve: {
-			extensions: [
-				'.js',
-				'.css',
-				'.scss'
-			]
+			extensions: ['.js', '.css', '.scss']
 		},
 		module: {
 			rules: [
 				{
 					test: /\.s?css$/,
-					use: [
-						'style-loader',
-						'css-loader',
-						'sass-loader'
-					]
+					use: ['style-loader', 'css-loader', 'sass-loader']
 				},
 				{
 					test: /\.js$/,
@@ -36,5 +28,5 @@ module.exports = function() {
 			port: 9000,
 			open: true
 		}
-	}
-}
+	};
+};

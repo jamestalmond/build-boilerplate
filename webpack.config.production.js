@@ -6,24 +6,15 @@ const BUNDLE_NAME = 'build-boilerplate';
 module.exports = function() {
 	return {
 		resolve: {
-			extensions: [
-				'.js',
-				'.css',
-				'.scss'
-			]
+			extensions: ['.js', '.css', '.scss']
 		},
 		module: {
 			rules: [
 				{
 					test: /\.s?css$/,
-					use: extractTextPlugin.extract(
-						{
-							use: [
-								'css-loader',
-								'sass-loader'
-							]
-						}
-					)
+					use: extractTextPlugin.extract({
+						use: ['css-loader', 'sass-loader']
+					})
 				},
 				{
 					test: /\.js$/,
@@ -39,11 +30,9 @@ module.exports = function() {
 					collapseWhitespace: process.env.NODE_ENV === 'production'
 				}
 			}),
-			new extractTextPlugin(
-				{
-					filename: `css/${BUNDLE_NAME}.bundle.css`
-				}
-			)
+			new extractTextPlugin({
+				filename: `css/${BUNDLE_NAME}.bundle.css`
+			})
 		]
-	}
-}
+	};
+};
