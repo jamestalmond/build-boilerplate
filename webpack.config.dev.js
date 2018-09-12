@@ -1,7 +1,4 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const extractTextPlugin = require('extract-text-webpack-plugin');
-
-const BUNDLE_NAME = 'build-boilerplate';
 
 module.exports = function() {
 	return {
@@ -31,16 +28,8 @@ module.exports = function() {
 		},
 		plugins: [
 			new htmlWebpackPlugin({
-				template: 'src/index.html',
-				minify: {
-					collapseWhitespace: process.env.NODE_ENV === 'production'
-				}
-			}),
-			new extractTextPlugin(
-				{
-					filename: `css/${BUNDLE_NAME}.bundle.css`
-				}
-			)
+				template: 'src/index.html'
+			})
 		],
 		devServer: {
 			historyApiFallback: true,
