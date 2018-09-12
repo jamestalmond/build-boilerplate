@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode=development --watch --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --mode=development --watch --hot",
+		"build": "webpack --config webpack.config.production.js --mode production",
     "test": "jest"
   },
   "keywords": [],

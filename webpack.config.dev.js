@@ -3,12 +3,6 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 
 const BUNDLE_NAME = 'build-boilerplate';
 
-// input
-// output
-// plugins
-// loaders
-// resolve
-
 module.exports = function() {
 	return {
 		resolve: {
@@ -22,14 +16,6 @@ module.exports = function() {
 			rules: [
 				{
 					test: /\.s?css$/,
-					// use: extractTextPlugin.extract(
-					// 	{
-					// 		use: [
-					// 			'css-loader',
-					// 			'sass-loader'
-					// 		]
-					// 	}
-					// ),
 					use: [
 						'style-loader',
 						'css-loader',
