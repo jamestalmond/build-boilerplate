@@ -12,11 +12,11 @@ A webpack build boilerplate that includes:
 ## Setup
 
 1. Clone the repo
-1. `npm i` or `yarn`
+1. `npm i`
 
 You're good to go!
 
 ## Usage
 
-1. `npm run dev` or `yarn dev` for dev server with HMR
-1. `npm run build` or `yarn build` for production build
+1. `npm run dev` for dev server with HMR
+1. `npm run build` for production build
