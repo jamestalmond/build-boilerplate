@@ -1,0 +1,77 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const BUNDLE_NAME = 'BUILD-BOILERPLATE';
+
+module.exports = (env, argv) => {
+	const environment = argv.mode;
+
+	const optimization = {
+		production: {
+			minimizer: [
+				new UglifyJsPlugin({
+					cache: true,
+					parallel: true,
+					sourceMap: true
+				}),
+				new OptimizeCSSAssetsPlugin({})
+			]
+		},
+		development: {}
+	};
+
+	const cssRules = {
+		production: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+		development: ['style-loader', 'css-loader', 'sass-loader']
+	};
+
+	const plugins = {
+		production: [
+			new CleanWebpackPlugin('dist'),
+			new MiniCssExtractPlugin({
+				filename: `css/${BUNDLE_NAME}.bundle.css`
+			})
+		],
+		development: [
+			new HtmlWebpackPlugin({
+				template: 'src/index.html'
+			})
+		]
+	};
+
+	const output = {
+		production: { filename: `js/${BUNDLE_NAME}.bundle.js` },
+		development: {}
+	};
+
+	const devServer = {
+		production: {},
+		development: { historyApiFallback: true, port: 9000, open: true }
+	};
+
+	return {
+		resolve: {
+			extensions: ['.js', '.css', '.scss']
+		},
+		optimization: optimization[environment],
+		module: {
+			rules: [
+				{
+					test: /\.s?css$/,
+					use: cssRules[environment]
+				},
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					use: 'babel-loader'
+				}
+			]
+		},
+		plugins: plugins[environment],
+		output: output[environment],
+		devServer: devServer[environment]
+	};
+};
