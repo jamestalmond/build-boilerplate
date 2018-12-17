@@ -49,7 +49,10 @@ module.exports = (env, argv) => {
 
 	const devServer = {
 		production: {},
-		development: { historyApiFallback: true, port: 9000, open: true }
+		development: {
+			historyApiFallback: true,
+			open: true
+		}
 	};
 
 	return {
