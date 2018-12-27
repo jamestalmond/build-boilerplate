@@ -70,6 +70,10 @@ module.exports = (env, argv) => {
 					test: /\.js$/,
 					exclude: /node_modules/,
 					use: 'babel-loader'
+				},
+				{
+					test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
+					use: ['file-loader']
 				}
 			]
 		},
