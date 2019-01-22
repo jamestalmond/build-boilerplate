@@ -24,8 +24,13 @@ module.exports = (env, argv) => {
 	};
 
 	const cssRules = {
-		production: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-		development: ['style-loader', 'css-loader', 'sass-loader']
+		production: [
+			MiniCssExtractPlugin.loader,
+			'css-loader',
+			'postcss-loader',
+			'sass-loader'
+		],
+		development: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 	};
 
 	const plugins = {
