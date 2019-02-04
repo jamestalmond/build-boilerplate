@@ -1,6 +1,6 @@
 {
 	"name": "build-boilerplate",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -9,7 +9,7 @@
 		"test": "jest"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "James Thomas Almond @vivalajam",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.2.0",
