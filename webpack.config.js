@@ -35,12 +35,13 @@ module.exports = (env, argv) => {
 
 	const plugins = {
 		production: [
-			new CleanWebpackPlugin('dist'),
+			new CleanWebpackPlugin(),
 			new MiniCssExtractPlugin({
 				filename: `css/${BUNDLE_NAME}.bundle.css`
 			})
 		],
 		development: [
+			new CleanWebpackPlugin(),
 			new HtmlWebpackPlugin({
 				template: 'src/index.html'
 			})
